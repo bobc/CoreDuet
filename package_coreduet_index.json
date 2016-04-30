@@ -1,0 +1,44 @@
+{
+  "packages": [
+    {
+      "name": "CoreDuet",
+      "maintainer": "Bob Cousins",
+      "websiteURL": "https://github.com/bobc/CoreDuet",
+      "email": "bobcousins42@googlemail.com",
+      "help": {
+        "online": "https://github.com/bobc/CoreDuet/issues"
+      },
+      "platforms": [
+        {
+          "name": "Arduino core for Duet",
+          "architecture": "sam",
+          "version": "1.0.0",
+          "category": "Contributed",
+          "help": {
+            "online": "https://github.com/bobc/CoreDuet/issues"
+          },
+          "url": "https://github.com/bobc/CoreDuet/archive/CoreDuet-1.0.0.zip",
+          "archiveFileName": "CoreDuet-1.0.0.zip",
+          "checksum": "SHA-256:c0faa7b9987d819e7fb1b0cbcae418b5d5085498cc0266a3755fae453e4a7dba",
+          "size": "15586189",
+          "boards": [
+            {"name": "Duet 0.6"},
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "arm-none-eabi-gcc",
+              "version": "4.8.3-2014q1"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.3a-arduino"
+            }
+          ]
+        }
+      ],
+      "tools":[]
+    }
+  ]
+}
