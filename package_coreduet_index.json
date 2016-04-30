@@ -16,8 +16,8 @@
           "category": "Contributed",
           "help": {
             "online": "https://github.com/bobc/CoreDuet/issues"
-          },
-          "url": "https://github.com/bobc/CoreDuet/archive/CoreDuet-1.0.0.zip",
+          },                            
+          "url": "https://github.com/bobc/CoreDuet/raw/master/CoreDuet-1.0.0.zip",
           "archiveFileName": "CoreDuet-1.0.0.zip",
           "checksum": "SHA-256:c0faa7b9987d819e7fb1b0cbcae418b5d5085498cc0266a3755fae453e4a7dba",
           "size": "15586189",
