@@ -22,7 +22,7 @@
           "checksum": "SHA-256:c0faa7b9987d819e7fb1b0cbcae418b5d5085498cc0266a3755fae453e4a7dba",
           "size": "15586189",
           "boards": [
-            {"name": "Duet 0.6"},
+            {"name": "Duet 0.6"}
           ],
           "toolsDependencies": [
             {
