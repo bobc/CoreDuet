@@ -1,21 +1,27 @@
 @echo off
-
-rem make zip
+rem 
+rem make package zip for CoreDuet
+rem
 
 set zip=pkzip.exe
 set zzzname=CoreDuet-1.0.0
 set flags=-silent
 
-rem cores libraries system variants boards.txt platform.txt -o 
+
+echo Creating release tree...
+rem rd /s %zzzname% 
+md %zzzname%
+
+xcopy cores     %zzzname%\cores\     /s
+xcopy libraries %zzzname%\libraries\ /s
+xcopy system    %zzzname%\system\    /s
+xcopy variants  %zzzname%\variants\  /s
+copy boards.txt   %zzzname%\boards.txt
+copy platform.txt %zzzname%\platform.txt
 
 echo Zipping files..
 del %zzzname%.zip
-%zip% -add %flags% %zzzname%.zip cores\*.*     -Path -recurse
-%zip% -add %flags% %zzzname%.zip libraries\*.* -Path -recurse
-%zip% -add %flags% %zzzname%.zip system\*.*    -Path -recurse
-%zip% -add %flags% %zzzname%.zip variants\*.*  -Path -recurse
-%zip% -add %flags% %zzzname%.zip boards.txt
-%zip% -add %flags% %zzzname%.zip platform.txt
+%zip% -add %flags% %zzzname%.zip %zzzname%\*.*     -Path -recurse
 
 echo Calculating sum..
 CertUtil -hashfile %zzzname%.zip SHA256 >hash.txt
