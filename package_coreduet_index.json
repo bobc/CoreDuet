@@ -23,8 +23,8 @@
           },                            
           "url": "https://github.com/bobc/CoreDuet/raw/master/CoreDuet-1.0.0.zip",
           "archiveFileName": "CoreDuet-1.0.0.zip",
-          "checksum": "SHA-256:c2858a907375c36e34e4439d546be1b4a1d7a7606f6db94334974e59953f66e6",
-          "size": "14234512",
+          "checksum": "SHA-256:7af326c568675fa192d244da168a1f859ec077a80e0fce26ad9869c4d6fd9abc",
+          "size": "15671614",
           "boards": 
           [
             {"name": "Duet 0.6"}

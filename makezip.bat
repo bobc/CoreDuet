@@ -12,11 +12,11 @@ echo Creating release tree...
 rem rd /s %zzzname% 
 md %zzzname%
 
-xcopy cores     %zzzname%\cores\     /s
-xcopy libraries %zzzname%\libraries\ /s
-xcopy system    %zzzname%\system\    /s
-xcopy variants  %zzzname%\variants\  /s
-copy boards.txt   %zzzname%\boards.txt
+xcopy cores     %zzzname%\cores\     /s /q
+xcopy libraries %zzzname%\libraries\ /s /q
+xcopy system    %zzzname%\system\    /s /q
+xcopy variants  %zzzname%\variants\  /s /q
+copy boards.txt   %zzzname%\boards.txt  
 copy platform.txt %zzzname%\platform.txt
 
 echo Zipping files..
@@ -25,6 +25,12 @@ del %zzzname%.zip
 
 echo Calculating sum..
 CertUtil -hashfile %zzzname%.zip SHA256 >hash.txt
+
+dir %zzzname%.zip
+
+echo ***
+echo *** Now update package_coreduet_index.json with SHA and size
+echo ***
 
 set zip=
 set zzzname=
