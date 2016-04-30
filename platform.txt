@@ -50,7 +50,7 @@ compiler.ar.extra_flags=
 compiler.elf2hex.extra_flags=
 
 
-compiler.libsam.c.flags="-I{build.system.path}/libsam" "-I{build.system.path}/libsam/include" "-I{build.system.path}/CMSIS/CMSIS/Include/" "-I{build.system.path}/CMSIS/Device/ATMEL/"
+compiler.libsam.c.flags="-I{build.system.path}/libsam" "-I{build.system.path}/CMSIS/CMSIS/Include/" "-I{build.system.path}/CMSIS/Device/ATMEL/"
 
 # USB Flags
 # ---------
@@ -89,6 +89,11 @@ recipe.output.save_file={build.project_name}.{build.variant}.bin
 ## Compute size
 recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
 recipe.size.regex=\.text\s+([0-9]+).*
+
+# for ctags 
+recipe.preproc.includes="{compiler.path}{compiler.cpp.cmd}" {preproc.includes.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DBOARD_{build.board} -DARDUINO_ARCH_SAM {compiler.cpp.extra_flags} {build.extra_flags} {preproc.includes.compatibility_flags} {includes} "{source_file}"
+
+recipe.preproc.macros="{compiler.path}{compiler.cpp.cmd}" {compiler.cpreprocessor.flags} {compiler.cpp.flags} {preproc.macros.flags} -DF_CPU={build.f_cpu} -DARDUINO={runtime.ide.version} -DBOARD_{build.board} -DARDUINO_ARCH_SAM {compiler.cpp.extra_flags} {build.extra_flags} {preproc.macros.compatibility_flags} {includes} "{source_file}" -o "{preprocessed_file_path}"
 
 
 # SAM3 Uploader tools

@@ -19,8 +19,8 @@
 #include <Arduino.h>
 #include "Reset.h"
 
-#include "flash_efc.h"
-#include "wdt.h"
+#include "include/flash_efc.h"
+#include "include/wdt.h"
 
 #ifdef __cplusplus
 extern "C" {

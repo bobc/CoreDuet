@@ -21,6 +21,9 @@
 #ifndef TwoWire_h
 #define TwoWire_h
 
+// Include Atmel CMSIS driver
+#include <include/twi.h>
+
 #include "Stream.h"
 #include "variant.h"
 

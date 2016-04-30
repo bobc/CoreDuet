@@ -19,7 +19,7 @@
 extern "C" {
 #include "stdlib.h"
 #include "stdint.h"
-#include "trng.h"
+#include "include/trng.h"
 }
 #include "WMath.h"
 
